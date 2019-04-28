@@ -110,4 +110,14 @@
                 var ul = document.createElement("ul");
                 $("books").appendChild(ul);
                 var i = 0;
+                for (i = 0; i < data.length; i++) {
+                    var item = data[i].book_title+ ", by " + data[i].author_name + " (" + data[i].published + ")" ;
+                     var li = document.createElement("li");
+                     ul.appendChild(li);
+                     li.innerHTML=li.innerHTML + item;
+                }
+            },
+            onFailure: ajaxFailure
+        });
+    }
 
