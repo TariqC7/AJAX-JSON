@@ -120,4 +120,15 @@
             onFailure: ajaxFailure
         });
     }
+    
+    //Window load function
+    window.onload=function () {
+        var json = window.location.search.substr(1);
+        if (json == "format=json") {
+           //display available categories on load using json
+           displayCategoryWithJson();
+           //On select categories,display books in category
+            $("list_books").addEventListener("click", function () {
+                displayInCategoryJson($$("input:checked[type=radio][name=choice]")[0].value);
+            });
 
