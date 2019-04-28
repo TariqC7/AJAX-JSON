@@ -41,4 +41,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' ){
                 $output .= "<name>";
                 $output .= $row['name'];
                 $output .= "</name>";
+                $output .= "</category>";
+            }
+             $output .= "</root>";
+        } else {
+            $output = json_encode($rows);
+        }
+
+        print( $output);
+    }
 
