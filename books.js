@@ -131,4 +131,14 @@
             $("list_books").addEventListener("click", function () {
                 displayInCategoryJson($$("input:checked[type=radio][name=choice]")[0].value);
             });
+         } else {
+            //display available categories on load using xml
+            displayCategory();
+            //On select categories,display books in category
+            $("list_books").addEventListener("click", function () {
+                displayInCategory($$("input:checked[type=radio][name=choice]")[0].value);
+            });
+        }
 
+    };
+}());
