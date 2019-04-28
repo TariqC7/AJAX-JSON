@@ -42,3 +42,13 @@
             onSuccess: function (ajax) {
                 var data = JSON.parse(ajax.responseText);
                 var i = 0;
+                for (i = 0; i < data.length; i++) {
+                    var name = data[i].name;
+                    var radioHtml = "<input type='radio' name='choice' id='" + i + "' value='" + name +"'>" + name;
+                    var radioFragment = document.createElement("div");
+                    radioFragment.innerHTML = radioHtml;
+                    var labelHtml = "<label for='" + i + "'>"+name+"</label>";
+                    var labelFragment = document.createElement("div");
+                    labelFragment.innerHTML = labelHtml;
+                    $("category").appendChild(radioFragment.firstChild);
+                    $("category").appendChild(labelFragment.firstChild);
