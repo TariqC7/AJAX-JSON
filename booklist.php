@@ -20,4 +20,15 @@ function fetchQuery($db, $sql){
      } catch (PDOException $ex) {
         error_log($ex->getMessage(), 3, "errors.txt");
      }
+}
+
+if($_SERVER['REQUEST_METHOD'] == 'POST' ){
+    $db = new PDO("mysql:dbname=books;host=localhost:81", "root");
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $type = "";
+    if (isset($_POST['type']) ) {
+        $type = input($_POST['type']);
+        $json = input($_POST['json']);
+    }
+
 
