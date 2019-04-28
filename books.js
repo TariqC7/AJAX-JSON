@@ -16,3 +16,12 @@
             onSuccess: function (ajax) {
                 var category = ajax.responseXML.getElementsByTagName("category");
                 var i = 0;
+                for (i = 0; i < category.length; i++) {
+                    var name = category[i].getElementsByTagName("name")[0].firstChild.nodeValue;
+                    var radioHtml = "<input type='radio' name='choice' id='" + i + "' value='" + name +"'>" + name;
+                    var radioFragment = document.createElement("div");
+                    radioFragment.innerHTML = radioHtml;
+                    var labelHtml = "<label for='" + i + "'>"+name+"</label>";
+                    var labelFragment = document.createElement("div");
+                    labelFragment.innerHTML = labelHtml;
+                    $("category").appendChild(radioFragment.firstChild);
