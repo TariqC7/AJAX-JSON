@@ -30,5 +30,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' ){
         $type = input($_POST['type']);
         $json = input($_POST['json']);
     }
+    if($type == "list_category") {
+        $sql = "SELECT DISTINCT name FROM category";
+        $rows = fetchQuery($db, $sql);
+        $output = "<root>";
+        if ($json == "false") {
 
+            foreach ($rows as $row) {
+                $output .= "<category>";
+                $output .= "<name>";
+                $output .= $row['name'];
+                $output .= "</name>";
 
