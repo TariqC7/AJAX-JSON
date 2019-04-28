@@ -50,4 +50,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' ){
 
         print( $output);
     }
+    
+    if ($type === "in_category") {
+        if (isset($_POST['type']) ) {
+            $category = $db->quote(strtolower($_POST['category']));
+        }
+        $sql = "SELECT DISTINCT (t.book_title),t.id, y.published, p.amount, c.name, a.author_name
+            FROM title t JOIN year y ON y.id = t.id
+            JOIN price p ON p.id = t.id
+            JOIN category c ON c.book_id = t.id
+            JOIN author a ON a.id = t.id WHERE c.name = $category";
+        $rows = fetchQuery($db, $sql);
 
