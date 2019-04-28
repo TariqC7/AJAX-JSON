@@ -37,3 +37,17 @@ LOCK TABLES 'title' WRITE;
 INSERT INTO 'title' VALUES (1,'Harry Potter'),(2,'Game Of Thrones'),(3,'Divergent'),(4,'Rich Dad Poor Dad');
 
 UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `year`;
+CREATE TABLE `year` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `published` year(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+
+LOCK TABLES 'year' WRITE;
+
+INSERT INTO 'year' VALUES (1,2000),(2,2002),(3,2004),(4,2006);
+
+UNLOCK TABLES;
+
