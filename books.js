@@ -31,3 +31,14 @@
             onFailure: ajaxFailure
         });
     }
+    
+    function displayCategoryWithJson() {
+        var type = "list_category";
+        new Ajax.Request("booklist.php",
+            {
+            method: "post",
+            parameters: {type: type, json: true},
+            //contentType: "application/json",
+            onSuccess: function (ajax) {
+                var data = JSON.parse(ajax.responseText);
+                var i = 0;
