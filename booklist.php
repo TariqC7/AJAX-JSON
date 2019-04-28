@@ -81,4 +81,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' ){
                 $output .= $row['published'];
                 $output .= "</year>";
                 $output .= "</book>";
+                }
+            $output .= "</root>";
+        } else { //json output
+            $output = json_encode($rows);
+        }
+        print( $output);
+
+    }
+}
+?>
 
