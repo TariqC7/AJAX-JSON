@@ -52,3 +52,8 @@
                     labelFragment.innerHTML = labelHtml;
                     $("category").appendChild(radioFragment.firstChild);
                     $("category").appendChild(labelFragment.firstChild);
+                   }
+            },
+            onFailure: ajaxFailure
+        });
+    }
