@@ -90,4 +90,16 @@
             onFailure: ajaxFailure
         });
     }
+    
+    function displayInCategoryJson(category) {
+        var type = "in_category";
+        new Ajax.Request("booklist.php",
+            {
+            method: "post",
+            parameters: {type: type, json: true, category: category},
+            //contentType: "application/json",
+            onSuccess: function (ajax) {
+                var data = JSON.parse(ajax.responseText);
+                //Add a p tag describing category
+                var p = document.createElement("p");
 
