@@ -25,3 +25,15 @@ INSERT INTO 'category' VALUES ('Fiction',1),('Autobiography',2),('Novel',3);
 
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `title`;
+CREATE TABLE `title` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `book_title` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1;
+
+LOCK TABLES 'title' WRITE;
+
+INSERT INTO 'title' VALUES (1,'Harry Potter'),(2,'Game Of Thrones'),(3,'Divergent'),(4,'Rich Dad Poor Dad');
+
+UNLOCK TABLES;
