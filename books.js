@@ -86,3 +86,8 @@
                     ul.appendChild(li);
                     li.innerHTML = li.innerHTML + item;
                 }
+             },
+            onFailure: ajaxFailure
+        });
+    }
+
