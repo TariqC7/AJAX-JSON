@@ -71,4 +71,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' ){
                 $output .= "<title>";
                 $output .= $row['book_title'];
                 $output .= "</title>";
+                $output .= "<category>";
+                $output .= $row['name'];
+                $output .= "</category>";
+                $output .= "<author>";
+                $output .= $row['author_name'];
+                $output .= "</author>";
+                $output .= "<year>";
+                $output .= $row['published'];
+                $output .= "</year>";
+                $output .= "</book>";
 
