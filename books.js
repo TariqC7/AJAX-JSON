@@ -70,3 +70,9 @@
                 //Add a p tag describng category
                 var p = document.createElement("p");
                 var textnode = document.createTextNode("Books in category '" + category + "':");
+                p.appendChild(textnode);
+                $("books").innerText = "";
+                $("books").appendChild(p);
+                var ul = document.createElement("ul");
+                $("books").appendChild(ul);
+                var i = 0;
