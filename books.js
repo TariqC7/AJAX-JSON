@@ -76,3 +76,13 @@
                 var ul = document.createElement("ul");
                 $("books").appendChild(ul);
                 var i = 0;
+                for (i = 0; i < book.length; i++) {
+                    var id = book[i].getElementsByTagName("id")[0].firstChild.nodeValue;
+                    var title = book[i].getElementsByTagName("title")[0].firstChild.nodeValue;
+                    var author = book[i].getElementsByTagName("author")[0].firstChild.nodeValue;
+                    var year = book[i].getElementsByTagName("year")[0].firstChild.nodeValue;
+                    var item = title + ", by " + author + " (" + year + ")" ;
+                    var li = document.createElement("li");
+                    ul.appendChild(li);
+                    li.innerHTML = li.innerHTML + item;
+                }
