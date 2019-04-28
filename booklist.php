@@ -61,4 +61,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' ){
             JOIN category c ON c.book_id = t.id
             JOIN author a ON a.id = t.id WHERE c.name = $category";
         $rows = fetchQuery($db, $sql);
+        if ($json == "false") {
+            $output = "<root>";
+            foreach ($rows as $row) {
+                $output .= "<book>";
+                $output .= "<id>";
+                $output .= $row['id'];
+                $output .= "</id>";
+                $output .= "<title>";
+                $output .= $row['book_title'];
+                $output .= "</title>";
 
