@@ -57,3 +57,16 @@
             onFailure: ajaxFailure
         });
     }
+    
+      function displayInCategory(category) {
+        var type = "in_category";
+        new Ajax.Request("booklist.php",
+            {
+            method: "post",
+            parameters: {type: type, json: false, category: category},
+            //contentType: "text/xml",
+            onSuccess: function (ajax) {
+                var book = ajax.responseXML.getElementsByTagName("book");
+                //Add a p tag describng category
+                var p = document.createElement("p");
+                var textnode = document.createTextNode("Books in category '" + category + "':");
